@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Color Picker View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ColorPickerViewController" customModule="LEDControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Helderheid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWR-4T-b0f">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="hs1-Zj-1tt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="io1-Sp-SD6">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numbersAndPunctuation" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <action selector="ipAddressChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="0ya-9D-n45"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="E3m-Z9-SF8"/>
+                                </connections>
+                            </textField>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vip-tQ-ilL">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="IP-adres" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x1e-5a-OQf">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="NSW-OD-CqP">
+                                <connections>
+                                    <action selector="brightnessSliderChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="KIm-Hh-lAG"/>
+                                </connections>
+                            </slider>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j8v-EB-Rdv">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="countChanged:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="D6H-sD-6id"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="0s5-cq-Pv1"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LED aantal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVW-XE-KZe">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="trm-ve-Mqg">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="9Pn-oh-UqB"/>
+                                </constraints>
+                                <state key="normal" title="LED's uit"/>
+                                <connections>
+                                    <action selector="clearStripButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4jW-N6-AHz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NSW-OD-CqP" firstAttribute="top" secondItem="trm-ve-Mqg" secondAttribute="bottom" constant="16" id="0Yq-qD-3hn"/>
+                            <constraint firstItem="uVW-XE-KZe" firstAttribute="width" secondItem="j8v-EB-Rdv" secondAttribute="width" id="3LX-do-4sV"/>
+                            <constraint firstItem="uVW-XE-KZe" firstAttribute="centerX" secondItem="j8v-EB-Rdv" secondAttribute="centerX" id="4zl-HD-kL2"/>
+                            <constraint firstItem="QWR-4T-b0f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="6nG-Ex-PwA"/>
+                            <constraint firstItem="j8v-EB-Rdv" firstAttribute="leading" secondItem="io1-Sp-SD6" secondAttribute="trailing" constant="8" id="F3W-wx-DSk"/>
+                            <constraint firstItem="QWR-4T-b0f" firstAttribute="top" secondItem="Vip-tQ-ilL" secondAttribute="bottom" constant="8" id="Gnp-4k-nht"/>
+                            <constraint firstItem="j8v-EB-Rdv" firstAttribute="top" secondItem="uVW-XE-KZe" secondAttribute="bottom" constant="8" id="KJm-2C-xl5"/>
+                            <constraint firstItem="Vip-tQ-ilL" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="NbT-j0-XMn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NSW-OD-CqP" secondAttribute="trailing" constant="20" id="PKp-hy-y8O"/>
+                            <constraint firstItem="trm-ve-Mqg" firstAttribute="height" secondItem="QWR-4T-b0f" secondAttribute="height" id="QuG-Is-V93"/>
+                            <constraint firstItem="io1-Sp-SD6" firstAttribute="top" secondItem="x1e-5a-OQf" secondAttribute="bottom" constant="8" id="Tb4-3o-oWF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NSW-OD-CqP" secondAttribute="bottom" constant="20" id="UhV-Vf-MnW"/>
+                            <constraint firstItem="io1-Sp-SD6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Vbm-lD-YcG"/>
+                            <constraint firstItem="Vip-tQ-ilL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="YcZ-m4-82N"/>
+                            <constraint firstItem="x1e-5a-OQf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="8" id="bAp-Vp-85G"/>
+                            <constraint firstItem="NSW-OD-CqP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="buN-x6-PlV"/>
+                            <constraint firstItem="trm-ve-Mqg" firstAttribute="leading" secondItem="QWR-4T-b0f" secondAttribute="trailing" constant="20" id="goo-wf-gdr"/>
+                            <constraint firstItem="uVW-XE-KZe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="i0Y-TS-CXC"/>
+                            <constraint firstItem="j8v-EB-Rdv" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kCj-wy-2gp"/>
+                            <constraint firstItem="x1e-5a-OQf" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="40" id="loO-sc-h8p"/>
+                            <constraint firstItem="NSW-OD-CqP" firstAttribute="top" secondItem="QWR-4T-b0f" secondAttribute="bottom" constant="20" id="m5j-Ot-GaO"/>
+                            <constraint firstItem="uVW-XE-KZe" firstAttribute="leading" secondItem="x1e-5a-OQf" secondAttribute="trailing" constant="8" id="rov-iF-eTy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="trm-ve-Mqg" secondAttribute="trailing" constant="20" id="tM7-bn-X4w"/>
+                            <constraint firstItem="Vip-tQ-ilL" firstAttribute="top" secondItem="io1-Sp-SD6" secondAttribute="bottom" constant="8" id="z7v-Yj-hOo"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="1uZ-aV-G5j" appends="YES" id="QOG-ky-vlP"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="colorWheelView" destination="Vip-tQ-ilL" id="GBI-Gl-7Ea"/>
+                        <outlet property="countTextField" destination="j8v-EB-Rdv" id="Rh8-xf-4FR"/>
+                        <outlet property="ipAddress" destination="io1-Sp-SD6" id="b0f-1F-N9G"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="1uZ-aV-G5j">
+                    <connections>
+                        <action selector="viewWasTapped:" destination="BYZ-38-t0r" id="ei8-tD-Ihc"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="183" y="386"/>
+        </scene>
+    </scenes>
+</document>
